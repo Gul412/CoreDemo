@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DAL.EntityFramework;
+using EntityKatmani.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,8 +24,18 @@ namespace CoreDemo.Controllers
         }
        public IActionResult BlogListByWriter()
         {
-            var values=bm.GetBlogListByWriter(1);
+            var values=bm.GetBlogListByWriter(2);
             return View(values);
+        }
+        [HttpGet]
+        public IActionResult BlogAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult BlogAdd(Blog p)
+        {
+            return View();
         }
     }
 }
