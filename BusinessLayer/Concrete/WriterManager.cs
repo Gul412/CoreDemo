@@ -41,7 +41,7 @@ namespace BusinessLayer.Concrete
 
         public Writer TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _writerDal.GetbyID(id);
         }
 
         public void TUpdate(Writer t)
