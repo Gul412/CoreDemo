@@ -1,4 +1,6 @@
-﻿using DAL.Concrete;
+﻿using BusinessLayer.Concrete;
+using DAL.Concrete;
+using DAL.EntityFramework;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -7,6 +9,7 @@ namespace CoreDemo.Controllers
 {
     public class DashboardController : Controller
     {
+        BlogManager bm = new BlogManager(new EfBlogRepository());
         [AllowAnonymous]
         public IActionResult Index()
         {
