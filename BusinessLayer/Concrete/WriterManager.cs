@@ -10,47 +10,48 @@ namespace BusinessLayer.Concrete
 {
 	public class WriterManager : IWriterService
     {
-        IWriterDal _writerdal;
-		private EfWriterRepository efWriterRepository;
+        IWriterDal _writerDal;
 
-		public WriterManager(IWriterDal writerdal)
-		{
-			_writerdal = writerdal;
-		}
+        public WriterManager(IWriterDal writerDal)
+        {
+            _writerDal = writerDal;
+        }
 
-		public WriterManager(EfWriterRepository efWriterRepository)
-		{
-			this.efWriterRepository = efWriterRepository;
-		}
+        public List<Writer> GetList()
+        {
+            throw new NotImplementedException();
+        }
 
-		public Writer GetByID(int id)
-		{
-			throw new NotImplementedException();
-		}
+        public List<Writer> GetWriterById(int id)
+        {
+            return
+            _writerDal.GetListAll(x => x.WriterID == id);
+            
+        }
 
-		public List<Writer> GetList()
-		{
-			throw new NotImplementedException();
-		}
+        public void TAdd(Writer t)
+        {
+            _writerDal.Insert(t);
+        }
 
-		public Writer TGetByFilter(Expression<Func<Writer, bool>> filter)
-		{
-			throw new NotImplementedException();
-		}
+        public void TDelete(Writer t)
+        {
+            throw new NotImplementedException();
+        }
 
-		public void WriterAdd(Writer writer)
-		{
-			throw new NotImplementedException();
-		}
+        public Writer TGetById(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-		public void WriterDelete(Writer writer)
-		{
-			throw new NotImplementedException();
-		}
+        public void TUpdate(Writer t)
+        {
+            throw new NotImplementedException();
+        }
 
-		public void WriterUpdate(Writer writer)
-		{
-			throw new NotImplementedException();
-		}
-	}
+        public void WriterAdd(Writer writer)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
