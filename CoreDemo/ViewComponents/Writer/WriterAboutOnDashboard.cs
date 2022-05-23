@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using DAL.Concrete;
 using DAL.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CoreDemo.ViewComponents.Writer
 {
@@ -9,7 +11,11 @@ namespace CoreDemo.ViewComponents.Writer
             WriterManager writermanager = new WriterManager(new EfWriterRepository());
             public IViewComponentResult Invoke()
             {
-                var values = writermanager.GetWriterById(2);
+            var usermail = User.Identity.Name;
+            Context c = new Context();
+            var writerID = c.Writers.Where(x => x.WriterMail == usermail).Select(y => y.WriterID)
+                .FirstOrDefault();
+            var values = writermanager.GetWriterById(writerID);
                 return View(values);
             }
         }  
