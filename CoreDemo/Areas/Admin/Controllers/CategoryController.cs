@@ -4,7 +4,13 @@ using DAL.EntityFramework;
 using EntityKatmani.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using X.PagedList;
+
+
 
 namespace CoreDemo.Areas.Admin.Controllers
 {
@@ -14,9 +20,11 @@ namespace CoreDemo.Areas.Admin.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryRepository());
         public IActionResult Index(int page=1)
         {
-            var values = cm.GetList().ToPagedList(page,4);
+
+            var values = cm.GetList().ToPagedList(page,3);
             return View(values);
         }
+
         [HttpGet]
         public IActionResult AddCategory()
         {
@@ -27,12 +35,15 @@ namespace CoreDemo.Areas.Admin.Controllers
         {
             CategoryValidator cv = new CategoryValidator();
             ValidationResult results = cv.Validate(p);
+
             if (results.IsValid)
             {
-                p.CategoryStatus = true;                    
+                p.CategoryStatus = true;
                 cm.TAdd(p);
+
                 return RedirectToAction("Index", "Category");
             }
+
             else
             {
                 foreach (var item in results.Errors)
@@ -40,10 +51,13 @@ namespace CoreDemo.Areas.Admin.Controllers
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
-            return View();    
+
+            return View();
         }
+
         public IActionResult CategoryDelete(int id)
         {
+
             var value = cm.TGetById(id);
             cm.TDelete(value);
             return RedirectToAction("Index");

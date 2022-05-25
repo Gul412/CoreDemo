@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{4886A880-4E81-428D-8349-E9F466F7C4E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{096FBBE2-BB88-4EE4-B2BC-8DBBE3F79294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{096FBBE2-BB88-4EE4-B2BC-8DBBE3F79294}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApiDemo", "..\..\..\Desktop\BlogApiDemo\BlogApiDemo.csproj", "{96ED2A16-A189-47E1-AADB-2EDC2D50D34B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{096FBBE2-BB88-4EE4-B2BC-8DBBE3F79294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{096FBBE2-BB88-4EE4-B2BC-8DBBE3F79294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{096FBBE2-BB88-4EE4-B2BC-8DBBE3F79294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96ED2A16-A189-47E1-AADB-2EDC2D50D34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96ED2A16-A189-47E1-AADB-2EDC2D50D34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96ED2A16-A189-47E1-AADB-2EDC2D50D34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96ED2A16-A189-47E1-AADB-2EDC2D50D34B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

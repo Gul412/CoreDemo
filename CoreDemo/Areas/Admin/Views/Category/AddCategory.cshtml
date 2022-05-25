@@ -1,5 +1,6 @@
 ﻿@model EntityKatmani.Concrete.Category
 
+
 @{
     ViewData["Title"] = "AddCategory";
     Layout = "~/Views/AdminLayout.cshtml";
@@ -7,16 +8,20 @@
 
 
 <h1>Yeni Kategori Girişi</h1>
-<br/>
-@using(Html.BeginForm("AddCategory","Category",FormMethod.Post))
+<br />
+
+@using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))
 {
-    @Html.Label("Kategori Adı")
-    @Html.TextBoxFor(x=>x.CategoryName,new {@class="form-control"})
-    @Html.ValidationMessageFor(x=>x.CategoryName)
-     <br />
-    @Html.Label("Kategori Açıklaması")
-    @Html.TextAreaFor(x=>x.CategoryDescription,15,3,new {@class="form-control"})
-    @Html.ValidationMessageFor(x=>x.CategoryDescription)
+    @Html.Label("Kategory Adı")
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryName)
     <br />
-    <button class="btn btn-info">Kategoriyi Kaydet</button>
+    
+
+    @Html.Label("Kategory Açıklaması")
+    @Html.TextAreaFor(x => x.CategoryDescription, 15,3, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryDescription)
+    <br />
+
+    <button class="btn btn-info">Verileri Kaydet</button>
 }
