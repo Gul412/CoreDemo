@@ -80,6 +80,7 @@ namespace CoreDemo.Controllers
             values.NameSurname = model.namesurname;
             values.ImageUrl = model.imageurl;
             values.Email = model.mail;
+            values.PasswordHash = _userManager.PasswordHasher.HashPassword(values,model.password);
             var result = await _userManager.UpdateAsync(values);
             return RedirectToAction("Index", "Dashboard");
         }
@@ -115,5 +116,6 @@ namespace CoreDemo.Controllers
             return RedirectToAction("Index", "Dashboard");
 
         }
+     
     }
 }
