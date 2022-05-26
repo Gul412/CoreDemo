@@ -32,6 +32,8 @@ namespace CoreDemo
             {
                 x.Password.RequireUppercase = false;
                 x.Password.RequireNonAlphanumeric= false;
+                x.Password.RequireDigit = false;
+                x.Password.RequireLowercase = false;
             })
                 .AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();

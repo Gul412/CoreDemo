@@ -11,6 +11,10 @@ namespace CoreDemo.Models
 
         [Display(Name ="Şifre")]
         [Required(ErrorMessage ="Şifrenizi Giriniz")]
+        [MaxLength(15,ErrorMessage ="Karakter Sayısı 15ten Az Olmalı")]
+        [MinLength(5, ErrorMessage = "Karakter Sayısı 5ten Fazla Olmalı")]
+        
+
         public string Password { get; set; }
 
         [Display(Name ="Şifre Tekrar")]
