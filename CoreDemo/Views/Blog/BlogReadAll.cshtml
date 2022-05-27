@@ -9,12 +9,11 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <body>
-    <!--//banner-->
-    <section class="banner-bottom">
-        <!--/blog-->
-        <div class="container">
-            <div class="row">
-                <!--left-->
+   <br/>
+   <br/>
+    <section class="row justify-content-md-center">
+  
+        <div class="row justify-content-md-center">                      
                 <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
                     @foreach (var item in Model)
                     {
@@ -30,13 +29,10 @@
                                         <li>
                                             <a href="#">
                                                 <i class="far fa-calendar-alt"></i> @(((DateTime)item.BlogCreateDate).ToString("dd MMMMMMMMM yyyy"))
-                                            </a>
-                                        
-
+                                            </a>                                        
                                     </ul>
                                 </div>
                             </div>
-
                             <h3>
                                 <a href="single.html">@item.BlogTitle </a>
                             </h3>
@@ -49,21 +45,10 @@
                     
                 </div>
 
-                <!--//left-->
-                <!--right-->
-                <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
-                    <div class="right-blog-info text-left">
-                     
-                        @await Component.InvokeAsync("CategoryList")
-
-                       
-                    </div>
-
-                </aside>
-                <!--//right-->
+          
             </div>
-        </div>
-    </section>   <!--//main-->
+        
+    </section>  
 </body>
 
 </html>
