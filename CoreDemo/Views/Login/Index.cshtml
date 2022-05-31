@@ -6,10 +6,11 @@
 
 <section class="main-content-w3layouts-agileits">
 		<div class="container">
-				<h3 class="tittle">Giriş Yap</h3>
+				<h3 class="tittle">Giriş Ekranı</h3>
 				<div class="row inner-sec">
 					<div class="login p-5 bg-light mx-auto mw-100">
 					<form method="post">
+						<h6 style="text-align:center">
 							<div class="form-group">
 							  <label for="exampleInputEmail1 mb-2">Kullanıcı Adı</label>
 							  <input type="text" class="form-control" asp-for="@Model.username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">				 
@@ -18,8 +19,11 @@
 							  <label for="exampleInputPassword1 mb-2">Şifre</label>
 							  <input type="password" class="form-control" asp-for="@Model.password" id="exampleInputPassword1" placeholder="" required="">
 							</div>
+							 
+						
 							<button type="submit" class="btn btn-primary submit mb-4" style="background-color:#b69ad6">Giriş Yap</button>
 							<p><a href="/RegisterUser/Index/" style="color:#b69ad6">Bir hesabın yok mu?</a></p>
+							</h6>
 					</form>
 		</div>
 		</div>
